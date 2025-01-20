@@ -50,3 +50,4 @@ RUN cmake llvm \
   -DMLIR_INCLUDE_INTEGRATION_TESTS=On
 RUN cmake --build build -t check-mlir
 RUN cmake --build build -t clang
+RUN ninja libclangTooling.a

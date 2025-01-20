@@ -44,8 +44,9 @@ RUN cmake llvm \
   -DLLVM_CCACHE_BUILD=On \
   -DLLVM_ENABLE_ASSERTIONS=On \
   -DLLVM_ENABLE_LLD=On \
-  -DLLVM_ENABLE_PROJECTS=mlir \
+  -DLLVM_ENABLE_PROJECTS="mlir;clang;clang-tools-extra" \
   -DLLVM_USE_SPLIT_DWARF=On \
   -DMLIR_ENABLE_BINDINGS_PYTHON=On \
   -DMLIR_INCLUDE_INTEGRATION_TESTS=On
 RUN cmake --build build -t check-mlir
+RUN cmake --build build -t clang
